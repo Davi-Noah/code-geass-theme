@@ -122,16 +122,17 @@ Este é um projeto independente, inspirado na atmosfera de *Code Geass*, e não
 possui associação com os detentores da obra original. Nomes, personagens e marcas
 citados pertencem aos seus respectivos titulares.
 
-### Crédito da imagem
+### Crédito das imagens
 
-O GIF é uma adaptação de
+O GIF e o ícone da extensão são adaptações de
 “[Geass.svg](https://commons.wikimedia.org/wiki/File:Geass.svg)”, criado por
 [Koveras](https://commons.wikimedia.org/wiki/User:Koveras) e licenciado sob
-[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). A adaptação
-adiciona fundo, recoloração, brilho, scanlines sutis e um pulso lento, e é
-distribuída sob a mesma licença. Consulte [`assets/LICENSE.md`](./assets/LICENSE.md).
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). As adaptações
+adicionam fundo, recoloração e brilho; o GIF também inclui scanlines sutis e um
+pulso lento. Ambas são distribuídas sob a mesma licença. Consulte
+[`assets/LICENSE.md`](./assets/LICENSE.md).
 
-O GIF não faz parte da licença MIT aplicada ao código deste projeto.
+Essas imagens não fazem parte da licença MIT aplicada ao código deste projeto.
 
 ## Changelog
 

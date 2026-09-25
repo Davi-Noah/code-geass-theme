@@ -13,6 +13,7 @@
     "url": "https://github.com/Davi-Noah/code-geass-theme/issues"
   },
   "homepage": "https://github.com/Davi-Noah/code-geass-theme#readme",
+  "icon": "assets/geass-icon.png",
   "galleryBanner": {
     "color": "#1B1621",
     "theme": "dark"
