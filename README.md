@@ -28,10 +28,14 @@ realeza e no brilho sobrenatural do Geass.
 Um tema escuro de alto contraste com fundo negro-violeta, carmesim, ouro e
 lavanda. Feito para sessões longas sem perder a presença dramática.
 
+<img src="./assets/previews/rebellion.png" alt="Geass Requiem Rebellion em uso no Visual Studio Code" width="100%">
+
 ### Holy Britannia
 
 Um tema claro de fundo marfim, vinho imperial, ouro envelhecido e violeta.
 Mantém a mesma hierarquia visual de Rebellion sob uma luz mais nobre.
+
+<img src="./assets/previews/britannia.png" alt="Geass Requiem Holy Britannia em uso no Visual Studio Code" width="100%">
 
 ## Instalação
 

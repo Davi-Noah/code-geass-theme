@@ -3,3 +3,4 @@
 .vscode/**
 *.vsix
 output/**
+preview-source/**

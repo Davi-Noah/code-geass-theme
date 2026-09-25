@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geass Requiem Theme Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body {
+      --title: #100d15; --activity: #100d15; --sidebar: #15111b;
+      --tabs: #100d15; --editor: #1b1621; --panel: #141018;
+      --line: #241b2a; --border: #2d2335; --text: #e9e3ee;
+      --muted: #7d7487; --keyword: #f05a82; --string: #c9a8f2;
+      --number: #f0bd57; --function: #e7bc5d; --type: #9fc4f0;
+      --property: #80ceb0; --status: #741d3b; --accent: #cf416f;
+      --sidebarText: #cfc5d8; --tabMuted: #8d8398;
+      background: var(--editor); color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    body.light {
+      --title: #37233e; --activity: #37233e; --sidebar: #f1eaee;
+      --tabs: #e9e0e5; --editor: #fffdf9; --panel: #f8f3f5;
+      --line: #f7f1f3; --border: #d2c5d4; --text: #312b35;
+      --muted: #817681; --keyword: #a51f4b; --string: #67458f;
+      --number: #8b6008; --function: #75520a; --type: #315f91;
+      --property: #24705b; --status: #7f2141; --accent: #a72f55;
+      --sidebarText: #4b3e50; --tabMuted: #756a79;
+    }
+    .app { width: 1440px; height: 900px; display: grid; grid-template-rows: 38px 1fr 24px; background: var(--editor); }
+    .titlebar { background: var(--title); color: #ede6f2; display: flex; align-items: center; padding: 0 14px; font-size: 13px; }
+    .traffic { display: flex; gap: 8px; margin-right: 18px; }
+    .traffic i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+    .traffic i:nth-child(1) { background: #ff5f57; } .traffic i:nth-child(2) { background: #febc2e; } .traffic i:nth-child(3) { background: #28c840; }
+    .window-title { flex: 1; text-align: center; opacity: .92; letter-spacing: .1px; }
+    .layout { min-height: 0; display: grid; grid-template-columns: 52px 252px 1fr; }
+    .activity { background: var(--activity); border-right: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; padding-top: 12px; gap: 20px; color: #bcaec2; }
+    .activity .icon { width: 28px; height: 28px; display: grid; place-items: center; font-size: 20px; opacity: .72; }
+    .activity .active { opacity: 1; color: #fff8fc; border-left: 2px solid var(--accent); }
+    .activity .spacer { flex: 1; }
+    .sidebar { background: var(--sidebar); color: var(--sidebarText); border-right: 1px solid var(--border); font-size: 13px; }
+    .side-title { height: 44px; display: flex; align-items: center; padding: 0 18px; font-size: 11px; letter-spacing: 1.2px; color: var(--function); }
+    .section { padding: 7px 10px; font-weight: 700; font-size: 11px; letter-spacing: .4px; }
+    .file { height: 26px; display: flex; align-items: center; gap: 8px; padding: 0 16px 0 24px; }
+    .file.active { background: var(--line); color: var(--text); }
+    .js { color: #e8b953; } .json { color: #c990e8; } .md { color: #75c3c8; }
+    .workspace { min-width: 0; display: grid; grid-template-rows: 38px 1fr 205px; }
+    .tabs { background: var(--tabs); display: flex; border-bottom: 1px solid var(--border); }
+    .tab { min-width: 190px; padding: 10px 15px; color: var(--tabMuted); font-size: 13px; border-right: 1px solid var(--border); }
+    .tab.active { background: var(--editor); color: var(--text); border-top: 2px solid var(--accent); padding-top: 8px; }
+    .editor { background: var(--editor); padding: 18px 0; font: 18px/1.58 "SFMono-Regular", Consolas, "Liberation Mono", monospace; overflow: hidden; }
+    .row { display: grid; grid-template-columns: 62px 1fr; min-height: 28px; padding-right: 40px; }
+    .row.current { background: var(--line); }
+    .ln { text-align: right; padding-right: 18px; color: var(--muted); user-select: none; font-size: 15px; }
+    .code { white-space: pre; }
+    .kw { color: var(--keyword); } .str { color: var(--string); } .num { color: var(--number); }
+    .fn { color: var(--function); } .type { color: var(--type); } .prop { color: var(--property); }
+    .comment { color: var(--muted); font-style: italic; } .punct { opacity: .82; }
+    .panel { background: var(--panel); border-top: 1px solid var(--border); padding: 0 20px; font: 14px/1.7 "SFMono-Regular", Consolas, monospace; }
+    .panel-head { height: 38px; display: flex; align-items: center; gap: 26px; font: 11px/1 Inter, sans-serif; letter-spacing: .6px; }
+    .panel-head span:first-child { color: var(--text); border-bottom: 2px solid var(--accent); height: 38px; display: flex; align-items: center; }
+    .terminal { padding-top: 8px; color: var(--text); }
+    .prompt { color: var(--property); } .command { color: var(--text); } .ok { color: var(--function); }
+    .status { background: var(--status); color: #fff9fb; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; font-size: 12px; }
+    .status div { display: flex; gap: 18px; }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="titlebar"><span class="traffic"><i></i><i></i><i></i></span><span class="window-title">geass-requiem — Visual Studio Code</span><span>⌘ K</span></header>
+    <section class="layout">
+      <aside class="activity"><div class="icon active">▱</div><div class="icon">⌕</div><div class="icon">⑂</div><div class="icon">▷</div><div class="icon">▦</div><div class="spacer"></div><div class="icon">⚙</div></aside>
+      <aside class="sidebar"><div class="side-title">EXPLORER</div><div class="section">⌄ GEASS-REQUiem</div><div class="file">⌄ src</div><div class="file active"><span class="js">JS</span> strategy.js</div><div class="file"><span class="json">{ }</span> package.json</div><div class="file"><span class="md">M↓</span> README.md</div></aside>
+      <section class="workspace">
+        <nav class="tabs"><div class="tab active"><span class="js">JS</span>&nbsp;&nbsp;strategy.js&nbsp;&nbsp;×</div><div class="tab"><span class="json">{ }</span>&nbsp;&nbsp;package.json</div></nav>
+        <div class="editor">
+          <div class="row"><span class="ln">1</span><span class="code"><span class="kw">class</span> <span class="type">ZeroRequiem</span> <span class="punct">{</span></span></div>
+          <div class="row"><span class="ln">2</span><span class="code">  <span class="kw">constructor</span><span class="punct">(</span><span class="prop">objective</span><span class="punct">)</span> <span class="punct">{</span></span></div>
+          <div class="row"><span class="ln">3</span><span class="code">    <span class="kw">this</span>.<span class="prop">objective</span> <span class="punct">=</span> <span class="prop">objective</span>;</span></div>
+          <div class="row"><span class="ln">4</span><span class="code">    <span class="kw">this</span>.<span class="prop">pieces</span> <span class="punct">=</span> <span class="punct">[]</span>;</span></div>
+          <div class="row"><span class="ln">5</span><span class="code">  <span class="punct">}</span></span></div>
+          <div class="row"><span class="ln">6</span><span class="code"></span></div>
+          <div class="row"><span class="ln">7</span><span class="code">  <span class="kw">async</span> <span class="fn">execute</span><span class="punct">()</span> <span class="punct">{</span></span></div>
+          <div class="row"><span class="ln">8</span><span class="code">    <span class="comment">// The only ones who should kill are those prepared to be killed.</span></span></div>
+          <div class="row current"><span class="ln">9</span><span class="code">    <span class="kw">const</span> <span class="prop">result</span> <span class="punct">=</span> <span class="kw">await</span> <span class="fn">changeTheWorld</span><span class="punct">({</span></span></div>
+          <div class="row"><span class="ln">10</span><span class="code">      <span class="prop">codename</span><span class="punct">:</span> <span class="str">'Zero'</span>,</span></div>
+          <div class="row"><span class="ln">11</span><span class="code">      <span class="prop">resolve</span><span class="punct">:</span> <span class="num">100</span>,</span></div>
+          <div class="row"><span class="ln">12</span><span class="code">      <span class="prop">strategy</span><span class="punct">:</span> <span class="str">`absolute victory`</span></span></div>
+          <div class="row"><span class="ln">13</span><span class="code">    <span class="punct">});</span></span></div>
+          <div class="row"><span class="ln">14</span><span class="code"></span></div>
+          <div class="row"><span class="ln">15</span><span class="code">    <span class="kw">return</span> <span class="prop">result</span>.<span class="prop">future</span>;</span></div>
+          <div class="row"><span class="ln">16</span><span class="code">  <span class="punct">}</span></span></div>
+          <div class="row"><span class="ln">17</span><span class="code"><span class="punct">}</span></span></div>
+        </div>
+        <div class="panel"><div class="panel-head"><span>TERMINAL</span><span>OUTPUT</span><span>DEBUG CONSOLE</span></div><div class="terminal"><span class="prompt">➜</span> <span class="command">geass-requiem git:(main) npm run package</span><br><span class="ok">✓</span> Packaged: geass-requiem-theme-0.1.1.vsix<br><span class="prompt">➜</span> <span class="command">geass-requiem git:(main)</span> <span class="punct">▌</span></div></div>
+      </section>
+    </section>
+    <footer class="status"><div><span>⑂ main*</span><span>✓ 0&nbsp;&nbsp;△ 0</span></div><div><span>Ln 9, Col 42</span><span>Spaces: 2</span><span>UTF-8</span><span>JavaScript</span></div></footer>
+  </main>
+  <script>if (new URLSearchParams(location.search).get('theme') === 'light') document.body.classList.add('light');</script>
+</body>
+</html>
