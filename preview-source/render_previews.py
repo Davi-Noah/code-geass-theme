@@ -160,7 +160,7 @@ def render(name, colors):
     text(draw, (editor_x + 20, panel_y + 62), "➜", colors["property"], F_TERM)
     text(draw, (editor_x + 45, panel_y + 62), "geass-requiem git:(main) npm run package", colors["text"], F_TERM)
     text(draw, (editor_x + 20, panel_y + 91), "✓", colors["function"], F_TERM)
-    text(draw, (editor_x + 45, panel_y + 91), "Packaged: geass-requiem-theme-0.1.1.vsix", colors["text"], F_TERM)
+    text(draw, (editor_x + 45, panel_y + 91), "Packaged: geass-requiem-theme-0.1.2.vsix", colors["text"], F_TERM)
     text(draw, (editor_x + 20, panel_y + 120), "➜", colors["property"], F_TERM)
     text(draw, (editor_x + 45, panel_y + 120), "geass-requiem git:(main)  ▌", colors["text"], F_TERM)
 
