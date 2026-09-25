@@ -2,9 +2,21 @@
   "name": "geass-requiem-theme",
   "displayName": "Geass Requiem",
   "description": "Dois temas inspirados em rebelião, realeza e no poder do Geass.",
-  "version": "0.1.0",
-  "publisher": "local",
+  "version": "0.1.1",
+  "publisher": "davi-noah",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Davi-Noah/code-geass-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Davi-Noah/code-geass-theme/issues"
+  },
+  "homepage": "https://github.com/Davi-Noah/code-geass-theme#readme",
+  "galleryBanner": {
+    "color": "#1B1621",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },

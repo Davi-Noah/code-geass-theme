@@ -9,7 +9,9 @@
 Uma dupla de temas para **Visual Studio Code** inspirada em rebelião, estratégia,
 realeza e no brilho sobrenatural do Geass.
 
-[![Version](https://img.shields.io/badge/version-0.1.0-B93C66?style=flat-square)](./CHANGELOG.md)
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/davi-noah.geass-requiem-theme?style=flat-square&label=marketplace&color=B93C66)](https://marketplace.visualstudio.com/items?itemName=davi-noah.geass-requiem-theme)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/davi-noah.geass-requiem-theme?style=flat-square&color=D7A84B)](https://marketplace.visualstudio.com/items?itemName=davi-noah.geass-requiem-theme)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/davi-noah.geass-requiem-theme?style=flat-square&color=67458F)](https://marketplace.visualstudio.com/items?itemName=davi-noah.geass-requiem-theme)
 [![VS Code](https://img.shields.io/badge/VS_Code-%5E1.80.0-37233E?style=flat-square&logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-D7A84B?style=flat-square)](./LICENSE)
 
@@ -33,18 +35,21 @@ Mantém a mesma hierarquia visual de Rebellion sob uma luz mais nobre.
 
 ## Instalação
 
-### Pelo pacote VSIX
+### Pelo Marketplace
 
-1. Baixe o arquivo [`geass-requiem-theme-0.1.0.vsix`](./geass-requiem-theme-0.1.0.vsix).
-2. No VS Code, abra a paleta de comandos com `Ctrl+Shift+P`.
-3. Execute **Extensions: Install from VSIX...** e selecione o arquivo.
-4. Execute **Preferences: Color Theme** e escolha um dos temas **Geass Requiem**.
+1. Abra o [Geass Requiem no Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=davi-noah.geass-requiem-theme).
+2. Clique em **Install**.
+3. No VS Code, execute **Preferences: Color Theme**.
+4. Escolha **Geass Requiem: Rebellion** ou **Geass Requiem: Holy Britannia**.
 
 ### Pelo terminal
 
 ```bash
-code --install-extension geass-requiem-theme-0.1.0.vsix
+code --install-extension davi-noah.geass-requiem-theme
 ```
+
+Também é possível procurar por `Geass Requiem` diretamente na aba de extensões
+do VS Code.
 
 ## Paleta de cores
 
