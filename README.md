@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Code_Geass_cosplayers_at_PF34_20210501a.jpg/1280px-Code_Geass_cosplayers_at_PF34_20210501a.jpg" alt="Cosplayers de Code Geass na PF34" width="100%">
+<img src="./assets/geass-symbol.gif" alt="Símbolo animado do Geass" width="100%">
 
-<sub>Foto por <a href="https://commons.wikimedia.org/wiki/File:Code_Geass_cosplayers_at_PF34_20210501a.jpg">kxz Chen</a>, licenciada sob <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>.</sub>
+<sub>Símbolo por <a href="https://commons.wikimedia.org/wiki/User:Koveras">Koveras</a>, adaptado sob <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</sub>
 
 # Geass Requiem
 
@@ -119,10 +119,14 @@ citados pertencem aos seus respectivos titulares.
 
 ### Crédito da imagem
 
-“[Code Geass cosplayers at PF34 20210501a](https://commons.wikimedia.org/wiki/File:Code_Geass_cosplayers_at_PF34_20210501a.jpg)”,
-de [kxz Chen](https://www.flickr.com/photos/kxz/51153701587/), é disponibilizada
-sob a licença [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/).
-A imagem não faz parte da licença MIT aplicada ao código deste projeto.
+O GIF é uma adaptação de
+“[Geass.svg](https://commons.wikimedia.org/wiki/File:Geass.svg)”, criado por
+[Koveras](https://commons.wikimedia.org/wiki/User:Koveras) e licenciado sob
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). A adaptação
+adiciona fundo, recoloração, brilho, scanlines sutis e um pulso lento, e é
+distribuída sob a mesma licença. Consulte [`assets/LICENSE.md`](./assets/LICENSE.md).
+
+O GIF não faz parte da licença MIT aplicada ao código deste projeto.
 
 ## Changelog
 
