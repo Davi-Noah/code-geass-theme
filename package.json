@@ -1,0 +1,38 @@
+{
+  "name": "geass-requiem-theme",
+  "displayName": "Geass Requiem",
+  "description": "Dois temas inspirados em rebelião, realeza e no poder do Geass.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "light theme",
+    "anime",
+    "geass"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Geass Requiem: Rebellion",
+        "uiTheme": "vs-dark",
+        "path": "./themes/geass-rebellion-color-theme.json"
+      },
+      {
+        "label": "Geass Requiem: Holy Britannia",
+        "uiTheme": "vs",
+        "path": "./themes/geass-britannia-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "npx --yes @vscode/vsce package"
+  }
+}
