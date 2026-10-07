@@ -1,6 +1,6 @@
-.git/**
-.gitignore
-.vscode/**
-*.vsix
+file-icons/**
 output/**
 preview-source/**
+.vscode/**
+.gitignore
+*.vsix

@@ -12,9 +12,9 @@ SANS = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf"
 
 THEMES = {
     "rebellion": {
-        "title": "#100D15", "activity": "#100D15", "sidebar": "#15111B",
-        "tabs": "#100D15", "editor": "#1B1621", "panel": "#141018",
-        "line": "#241B2A", "border": "#2D2335", "text": "#E9E3EE",
+        "title": "#0D0D0F", "activity": "#0D0D0F", "sidebar": "#121214",
+        "tabs": "#0D0D0F", "editor": "#171719", "panel": "#111113",
+        "line": "#202024", "border": "#2B292E", "text": "#E9E3EE",
         "muted": "#7D7487", "keyword": "#F05A82", "string": "#C9A8F2",
         "number": "#F0BD57", "function": "#E7BC5D", "type": "#9FC4F0",
         "property": "#80CEB0", "status": "#741D3B", "accent": "#CF416F",
@@ -28,6 +28,33 @@ THEMES = {
         "number": "#8B6008", "function": "#75520A", "type": "#315F91",
         "property": "#24705B", "status": "#7F2141", "accent": "#A72F55",
         "sidebar_text": "#4B3E50", "tab_muted": "#756A79", "title_text": "#FFF9FC",
+    },
+    "obsidian": {
+        "title": "#090B0E", "activity": "#090B0E", "sidebar": "#14181D",
+        "tabs": "#090B0E", "editor": "#090B0E", "panel": "#14181D",
+        "line": "#14181D", "border": "#343C46", "text": "#E9E3EE",
+        "muted": "#7D7487", "keyword": "#F05A82", "string": "#C9A8F2",
+        "number": "#F0BD57", "function": "#E7BC5D", "type": "#9FC4F0",
+        "property": "#80CEB0", "status": "#741D3B", "accent": "#CF416F",
+        "sidebar_text": "#CFC5D8", "tab_muted": "#8D8398", "title_text": "#EDE6F2",
+    },
+    "crimson-ayu": {
+        "title": "#0A0F14", "activity": "#0A0F14", "sidebar": "#111A21",
+        "tabs": "#0A0F14", "editor": "#0E1419", "panel": "#111A21",
+        "line": "#151F27", "border": "#243340", "text": "#E9E3EE",
+        "muted": "#7D7487", "keyword": "#F05A82", "string": "#C9A8F2",
+        "number": "#F0BD57", "function": "#E7BC5D", "type": "#9FC4F0",
+        "property": "#80CEB0", "status": "#741D3B", "accent": "#CF416F",
+        "sidebar_text": "#CFC5D8", "tab_muted": "#8D8398", "title_text": "#EDE6F2",
+    },
+    "crimson-rebellion": {
+        "title": "#100D15", "activity": "#100D15", "sidebar": "#15111B",
+        "tabs": "#100D15", "editor": "#1B1621", "panel": "#141018",
+        "line": "#241B2A", "border": "#2D2335", "text": "#E9E3EE",
+        "muted": "#7D7487", "keyword": "#F05A82", "string": "#C9A8F2",
+        "number": "#F0BD57", "function": "#E7BC5D", "type": "#9FC4F0",
+        "property": "#80CEB0", "status": "#741D3B", "accent": "#CF416F",
+        "sidebar_text": "#CFC5D8", "tab_muted": "#8D8398", "title_text": "#EDE6F2",
     },
 }
 
@@ -160,7 +187,7 @@ def render(name, colors):
     text(draw, (editor_x + 20, panel_y + 62), "➜", colors["property"], F_TERM)
     text(draw, (editor_x + 45, panel_y + 62), "geass-requiem git:(main) npm run package", colors["text"], F_TERM)
     text(draw, (editor_x + 20, panel_y + 91), "✓", colors["function"], F_TERM)
-    text(draw, (editor_x + 45, panel_y + 91), "Packaged: geass-requiem-theme-0.1.2.vsix", colors["text"], F_TERM)
+    text(draw, (editor_x + 45, panel_y + 91), "Packaged: geass-requiem-theme-0.14.0.vsix", colors["text"], F_TERM)
     text(draw, (editor_x + 20, panel_y + 120), "➜", colors["property"], F_TERM)
     text(draw, (editor_x + 45, panel_y + 120), "geass-requiem git:(main)  ▌", colors["text"], F_TERM)
 

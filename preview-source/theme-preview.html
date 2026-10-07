@@ -8,9 +8,9 @@
     * { box-sizing: border-box; }
     html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
     body {
-      --title: #100d15; --activity: #100d15; --sidebar: #15111b;
-      --tabs: #100d15; --editor: #1b1621; --panel: #141018;
-      --line: #241b2a; --border: #2d2335; --text: #e9e3ee;
+      --title: #0d0d0f; --activity: #0d0d0f; --sidebar: #121214;
+      --tabs: #0d0d0f; --editor: #171719; --panel: #111113;
+      --line: #202024; --border: #2b292e; --text: #e9e3ee;
       --muted: #7d7487; --keyword: #f05a82; --string: #c9a8f2;
       --number: #f0bd57; --function: #e7bc5d; --type: #9fc4f0;
       --property: #80ceb0; --status: #741d3b; --accent: #cf416f;
@@ -26,6 +26,21 @@
       --number: #8b6008; --function: #75520a; --type: #315f91;
       --property: #24705b; --status: #7f2141; --accent: #a72f55;
       --sidebarText: #4b3e50; --tabMuted: #756a79;
+    }
+    body.obsidian {
+      --title: #090b0e; --activity: #090b0e; --sidebar: #14181d;
+      --tabs: #090b0e; --editor: #090b0e; --panel: #14181d;
+      --line: #14181d; --border: #343c46;
+    }
+    body.crimson-ayu {
+      --title: #0a0f14; --activity: #0a0f14; --sidebar: #111a21;
+      --tabs: #0a0f14; --editor: #0e1419; --panel: #111a21;
+      --line: #151f27; --border: #243340;
+    }
+    body.crimson-rebellion {
+      --title: #100d15; --activity: #100d15; --sidebar: #15111b;
+      --tabs: #100d15; --editor: #1b1621; --panel: #141018;
+      --line: #241b2a; --border: #2d2335;
     }
     .app { width: 1440px; height: 900px; display: grid; grid-template-rows: 38px 1fr 24px; background: var(--editor); }
     .titlebar { background: var(--title); color: #ede6f2; display: flex; align-items: center; padding: 0 14px; font-size: 13px; }
@@ -92,11 +107,17 @@
           <div class="row"><span class="ln">16</span><span class="code">  <span class="punct">}</span></span></div>
           <div class="row"><span class="ln">17</span><span class="code"><span class="punct">}</span></span></div>
         </div>
-        <div class="panel"><div class="panel-head"><span>TERMINAL</span><span>OUTPUT</span><span>DEBUG CONSOLE</span></div><div class="terminal"><span class="prompt">➜</span> <span class="command">geass-requiem git:(main) npm run package</span><br><span class="ok">✓</span> Packaged: geass-requiem-theme-0.1.2.vsix<br><span class="prompt">➜</span> <span class="command">geass-requiem git:(main)</span> <span class="punct">▌</span></div></div>
+        <div class="panel"><div class="panel-head"><span>TERMINAL</span><span>OUTPUT</span><span>DEBUG CONSOLE</span></div><div class="terminal"><span class="prompt">➜</span> <span class="command">geass-requiem git:(main) npm run package</span><br><span class="ok">✓</span> Packaged: geass-requiem-theme-0.14.0.vsix<br><span class="prompt">➜</span> <span class="command">geass-requiem git:(main)</span> <span class="punct">▌</span></div></div>
       </section>
     </section>
     <footer class="status"><div><span>⑂ main*</span><span>✓ 0&nbsp;&nbsp;△ 0</span></div><div><span>Ln 9, Col 42</span><span>Spaces: 2</span><span>UTF-8</span><span>JavaScript</span></div></footer>
   </main>
-  <script>if (new URLSearchParams(location.search).get('theme') === 'light') document.body.classList.add('light');</script>
+  <script>
+    const theme = new URLSearchParams(location.search).get('theme');
+    if (theme === 'light') document.body.classList.add('light');
+    if (theme === 'obsidian') document.body.classList.add('obsidian');
+    if (theme === 'crimson-ayu') document.body.classList.add('crimson-ayu');
+    if (theme === 'crimson-rebellion') document.body.classList.add('crimson-rebellion');
+  </script>
 </body>
 </html>

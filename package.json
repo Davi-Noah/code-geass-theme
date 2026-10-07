@@ -1,8 +1,8 @@
 {
   "name": "geass-requiem-theme",
-  "displayName": "Geass Requiem",
-  "description": "Dois temas inspirados em rebelião, realeza e no poder do Geass.",
-  "version": "0.1.2",
+  "displayName": "Code Geass",
+  "description": "Temas, companion e terminal inspirados em rebelião, realeza e no poder do Geass.",
+  "version": "0.14.0",
   "publisher": "davi-noah",
   "license": "MIT",
   "repository": {
@@ -15,21 +15,36 @@
   "homepage": "https://github.com/Davi-Noah/code-geass-theme#readme",
   "icon": "assets/geass-icon.png",
   "galleryBanner": {
-    "color": "#1B1621",
+    "color": "#171719",
     "theme": "dark"
   },
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
-    "Themes"
+    "Themes",
+    "Other"
   ],
   "keywords": [
     "theme",
     "dark theme",
     "light theme",
     "anime",
-    "geass"
+    "geass",
+    "companion",
+    "terminal"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onView:geassRequiem.companionView",
+    "onCommand:geassRequiem.openCompanion",
+    "onCommand:geassRequiem.awakenGeass",
+    "onCommand:geassRequiem.changeCharacter",
+    "onCommand:geassRequiem.changeScene",
+    "onCommand:geassRequiem.startFocus",
+    "onCommand:geassRequiem.stopFocus",
+    "onCommand:geassRequiem.openTerminal",
+    "onTerminalProfile:geassRequiem.terminalProfile"
   ],
   "contributes": {
     "themes": [
@@ -42,8 +57,261 @@
         "label": "Geass Requiem: Holy Britannia",
         "uiTheme": "vs",
         "path": "./themes/geass-britannia-color-theme.json"
+      },
+      {
+        "label": "Geass Requiem: Obsidian",
+        "uiTheme": "vs-dark",
+        "path": "./themes/geass-obsidian-color-theme.json"
+      },
+      {
+        "label": "Geass Requiem: Crimson Ayu",
+        "uiTheme": "vs-dark",
+        "path": "./themes/geass-crimson-ayu-color-theme.json"
+      },
+      {
+        "label": "Geass Requiem: Crimson Rebellion",
+        "uiTheme": "vs-dark",
+        "path": "./themes/geass-crimson-rebellion-color-theme.json"
       }
-    ]
+    ],
+    "commands": [
+      {
+        "command": "geassRequiem.openCompanion",
+        "title": "Geass Requiem: Mostrar Companion",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "geassRequiem.awakenGeass",
+        "title": "Geass Requiem: Despertar o Geass",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "geassRequiem.startFocus",
+        "title": "Geass Requiem: Iniciar ou continuar Pomodoro",
+        "icon": "$(watch)"
+      },
+      {
+        "command": "geassRequiem.stopFocus",
+        "title": "Geass Requiem: Parar Pomodoro",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "geassRequiem.changeCharacter",
+        "title": "Geass Requiem: Trocar Personagem",
+        "icon": "$(account)"
+      },
+      {
+        "command": "geassRequiem.changeScene",
+        "title": "Geass Requiem: Trocar Cenário",
+        "icon": "$(symbol-color)"
+      },
+      {
+        "command": "geassRequiem.openTerminal",
+        "title": "Geass Requiem: Abrir Terminal",
+        "icon": "$(terminal-bash)"
+      }
+    ],
+    "terminal": {
+      "profiles": [
+        {
+          "id": "geassRequiem.terminalProfile",
+          "title": "Geass Requiem Terminal",
+          "icon": "eye"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "type": "webview",
+          "id": "geassRequiem.companionView",
+          "name": "GEASS REQUIEM",
+          "icon": "assets/geass-view.svg",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "geassRequiem.awakenGeass",
+          "when": "view == geassRequiem.companionView",
+          "group": "navigation@3"
+        },
+        {
+          "command": "geassRequiem.startFocus",
+          "when": "view == geassRequiem.companionView && config.geassRequiem.companionFeatures && config.geassRequiem.focusMode && !geassRequiem.focusActive",
+          "group": "navigation@4"
+        },
+        {
+          "command": "geassRequiem.stopFocus",
+          "when": "view == geassRequiem.companionView && geassRequiem.focusActive",
+          "group": "navigation@4"
+        },
+        {
+          "command": "geassRequiem.changeCharacter",
+          "when": "view == geassRequiem.companionView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "geassRequiem.changeScene",
+          "when": "view == geassRequiem.companionView",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Geass Requiem",
+      "properties": {
+        "geassRequiem.character": {
+          "type": "string",
+          "enum": [
+            "zero",
+            "cc",
+            "kallen",
+            "suzaku"
+          ],
+          "enumItemLabels": [
+            "Zero",
+            "C.C.",
+            "Kallen",
+            "Suzaku"
+          ],
+          "default": "zero",
+          "description": "Escolhe o personagem exibido no Geass Companion."
+        },
+        "geassRequiem.scene": {
+          "type": "string",
+          "enum": [
+            "geass",
+            "tokyo",
+            "britannia",
+            "chess"
+          ],
+          "enumItemLabels": [
+            "Geass",
+            "Tóquio à Noite",
+            "Palácio de Britannia",
+            "Tabuleiro"
+          ],
+          "default": "geass",
+          "description": "Escolhe o cenário do Geass Companion."
+        },
+        "geassRequiem.companionSize": {
+          "type": "string",
+          "enum": [
+            "small",
+            "medium",
+            "large"
+          ],
+          "enumItemLabels": [
+            "Pequeno",
+            "Médio",
+            "Grande"
+          ],
+          "default": "medium",
+          "description": "Define o tamanho do companion no Explorer."
+        },
+        "geassRequiem.companionMotion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ativa as animações do Geass Companion."
+        },
+        "geassRequiem.companionFeatures": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ativa ou desativa em conjunto as funcionalidades extras do companion."
+        },
+        "geassRequiem.contextReactions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Permite que o companion reaja a arquivos salvos, erros, terminais e tarefas executadas."
+        },
+        "geassRequiem.focusMode": {
+          "type": "boolean",
+          "default": true,
+          "description": "Disponibiliza ciclos Pomodoro completos no companion."
+        },
+        "geassRequiem.focusDuration": {
+          "type": "number",
+          "default": 25,
+          "minimum": 1,
+          "maximum": 180,
+          "description": "Duração, em minutos, de cada sessão de foco do Pomodoro."
+        },
+        "geassRequiem.shortBreakDuration": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 60,
+          "description": "Duração, em minutos, da pausa curta do Pomodoro."
+        },
+        "geassRequiem.longBreakDuration": {
+          "type": "number",
+          "default": 15,
+          "minimum": 1,
+          "maximum": 120,
+          "description": "Duração, em minutos, da pausa longa do Pomodoro."
+        },
+        "geassRequiem.focusSessionsBeforeLongBreak": {
+          "type": "number",
+          "default": 4,
+          "minimum": 1,
+          "maximum": 12,
+          "description": "Quantidade de sessões de foco concluídas antes de uma pausa longa."
+        },
+        "geassRequiem.pomodoroAutoStartBreaks": {
+          "type": "boolean",
+          "default": false,
+          "description": "Inicia automaticamente a pausa curta ou longa após uma sessão de foco."
+        },
+        "geassRequiem.pomodoroAutoStartFocus": {
+          "type": "boolean",
+          "default": false,
+          "description": "Inicia automaticamente a próxima sessão de foco ao terminar uma pausa."
+        },
+        "geassRequiem.pomodoroNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Exibe notificações do VS Code ao concluir focos e pausas."
+        },
+        "geassRequiem.affinitySystem": {
+          "type": "boolean",
+          "default": false,
+          "description": "Ativa níveis de vínculo individuais, progressão e falas desbloqueáveis para cada personagem."
+        },
+        "geassRequiem.emotionalStates": {
+          "type": "boolean",
+          "default": true,
+          "description": "Permite que o humor, a identificação visual e o comportamento do personagem mudem conforme os eventos."
+        },
+        "geassRequiem.advancedInteractions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ativa clique duplo, menu de contexto e reposicionamento do personagem por arraste."
+        },
+        "geassRequiem.rareEvents": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ativa acontecimentos raros e easter eggs exclusivos de cada personagem."
+        },
+        "geassRequiem.rareEventFrequency": {
+          "type": "string",
+          "enum": [
+            "rare",
+            "normal",
+            "frequent"
+          ],
+          "enumItemLabels": [
+            "Raros (15–30 min)",
+            "Normais (8–18 min)",
+            "Frequentes (3–8 min)"
+          ],
+          "default": "rare",
+          "description": "Define o intervalo aproximado entre acontecimentos especiais."
+        }
+      }
+    }
   },
   "scripts": {
     "package": "npx --yes @vscode/vsce package"
